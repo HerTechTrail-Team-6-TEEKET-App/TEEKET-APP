@@ -1,0 +1,38 @@
+export const events = [
+  {
+    date: "2023/03/06",
+    cost: "$10.00",
+    location: "Abuja, Nigeria",
+    title: "The next conference '23",
+    covener: "Dev Tobs",
+    id: 1,
+    img: "event_1",
+  },
+  {
+    date: "2023/03/09",
+    cost: "$10.00",
+    location: "Lagos, Nigeria",
+    title: "DevFest Lagos '23",
+    covener: "Hack Sultan",
+    id: 2,
+    img: "event_2",
+  },
+  {
+    date: "2023/03/09",
+    cost: "$10.00",
+    location: "Imo, Nigeria",
+    title: "Sip and Paint NG at Radison Blu",
+    covener: "Annabelle Richard",
+    id: 3,
+    img: "event_3",
+  },
+  // {
+  //   date: "2023/06/15",
+  //   cost: "$10.00",
+  //   location: "Lagos, Nigeria",
+  //   title: "OSCCAFEST '23",
+  //   covener: "Ruth Ikegah",
+  //   id: 4,
+  //   img: "event_4",
+  // },
+];
