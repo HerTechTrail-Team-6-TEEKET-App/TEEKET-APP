@@ -2,6 +2,9 @@ import patternImg from "./pattern_img.svg";
 
 import event3 from "./unsplash_QBpZGqEMsKg.svg";
 
-export { event3 };
+import wallace from './wallace.svg';
 
-export { patternImg };
+import location from './location.svg';
+
+export { event3, patternImg, wallace, location };
+

@@ -2,8 +2,8 @@ import google from "../img/google.png";
 
 function MobileLogin() {
    return (
-     <div className=" h-[70vh] m-0 p-0 box-border  font-manrope ">
-       <p className=" text-black text-center font-semibold mt-14 p-8 pt-16  text-[24px]">
+     <div className=" h-[70vh] w-[87%] justify-center align box-border  font-manrope ">
+       <p className=" text-black text-center font-semibold mt-14 p-8 pt-16  text-[20px]">
          Log in or sign up to continue
        </p>
        <div className=" bg-[#FFFFFF] border-[#EDEDED] flex justify-center my-8">

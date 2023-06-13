@@ -3,30 +3,35 @@ import musicImg from "../img/music_note.png";
 import { useState } from "react";
 import search from "../img/search_icon.png";
 import searchBar from "../img/Search bar.png";
-import { events } from "../data";
-// import { sports } from "../data1";
+import { events, sports } from "../data";
+
 
 function TabLists() {
   const [searchval, setSearchVal] = useState("");
 
-  const [searchresults, setSearchResults] = useState(events);
+  const [searchresults, setSearchResults] = useState(events, sports);
 
   const filterEvents = (e) => {
     setSearchVal(e.target.value);
     if (searchval === "") {
       console.log("empty");
-      setSearchResults(events);
+      setSearchResults(events, sports);
     }
     let filteredData = searchresults.filter((event) =>
       event.title.toLowerCase().includes(searchval.toLowerCase())
     );
-    setSearchResults(filteredData);
+    let filteredData1 = searchresults.filter((sport) =>
+      sport.title.toLowerCase().includes(searchval.toLowerCase())
+    );
+    setSearchResults(filteredData, filteredData1);
   };
 
   const clearSearchBar = () => {
     setSearchVal("");
-    setSearchResults(events);
+    setSearchResults(events, sports);
   };
+
+
   return (
     <div className="m-5 font-manrope">
       <p className="font-manrope mt-16 text-[24px] font-medium">
@@ -42,7 +47,7 @@ function TabLists() {
           <input
             type="text"
             placeholder="Search all events"
-            className="  rounded-2xl border-none text-[20px] font-medium bg-[#F5F5F5]"
+            className=" outline-none  rounded-2xl border-none text-[20px] font-medium bg-[#F5F5F5]"
             value={searchval}
             onChange={filterEvents}
           />
@@ -75,75 +80,121 @@ function TabLists() {
         </div>
       </div>
 
-      <div className=" mt-12 text-[24px] h-[32px]">
+      <div className=" mt-12 text-[24px] h-[32px] font-manrope">
         <h1 className=" font-extrabold">Upcoming Events</h1>
       </div>
-      <div className=" mt-14">
+      <div className=" mt-14 w-full font-manrope">
         {searchresults.map((event) => {
           return (
-            <div key={event.id} className=" flex gap-6 mx-auto my-8 w-85vw">
-              <div className=" flex flex-col gap-4">
-                <div className=" flex justify-between">
+            <div
+              key={event.id}
+              className=" flex gap-4 px-4 w-[full] justify-between mb-8 items-center"
+            >
+              <div className=" flex flex-col gap-4 w-2/3">
+                <div className=" flex justify-start items-center gap-10">
                   {" "}
                   <p>{event.date}</p>
-                  <p className=" bg-gradient-to-b from-[#E5C6C6] via-[#FDBABA] to-[#E5C6C6] text-red-600 font-bold">
+                  <p className=" bg-[#FF0909] bg-opacity-[13%] w-[59px] h-[24px] rounded-lg text-[#FF0909] font-bold text-[12px] flex justify-center items-center">
                     {event.cost}
                   </p>
                 </div>
                 <div className=" mb-1">
-                  <p className=" font-extrabold mb-0 text-[25px] text-lg mr-3">
+                  <p className=" font-extrabold text-[25px] text-lg">
                     {event.title}
                   </p>
-                  <p>{event.covener}</p>
-                  <p>{event.location}</p>
+                  <div className=" flex justify-start items-center gap-4 w-full mt-4">
+                    <div className=" w-[24px] h-[24px] rounded-full">
+                      <img
+                        className=" w-full h-full object-cover"
+                        src={event.authorImage}
+                        alt=""
+                      />
+                    </div>
+                    <p className=" ">{event.covener}</p>
+                  </div>
+                  <div className=" flex justify-start items-center gap-4 w-full mt-4">
+                    <div className=" w-[24px] h-[24px] rounded-full">
+                      <img
+                        className=" w-full h-full object-cover"
+                        src={event.location1}
+                        alt=""
+                      />
+                    </div>
+                    <p className="">{event.location}</p>
+                  </div>
                 </div>
               </div>
-              <div>
+              <div className=" w-[122px] h-[140px] rounded-xl">
                 <img
-                  className="ml-4 mr-9"
+                  className=" w-full h-full object-cover"
                   src={require("../img/" + event.img + ".png")}
                   alt={event.title}
                 />
               </div>
-              </div>
-              );
-        })}
-      </div>
-      
-      {/* <div className=" mt-12 text-[24px] h-[32px]">
-        <h1 className=" font-extrabold">Sport Events</h1>
-      </div>
-      <div className=" mt-14">
-        {searchresults.map((sports) => {
-          return (
-            <div key={sports.id} className=" flex gap-6 mx-auto my-8 w-85vw">
-              <div className=" flex flex-col gap-4">
-                <div className=" flex justify-between">
-                  {" "}
-                  <p>{sports.date}</p>
-                  <p className=" bg-gradient-to-b from-[#E5C6C6] via-[#FDBABA] to-[#E5C6C6] text-red-600 font-bold">
-                    {sports.cost}
-                  </p>
-                </div>
-                <div className=" mb-1">
-                  <p className=" font-extrabold mb-0 text-[25px] text-lg mr-3">
-                    {sports.title}
-                  </p>
-                  <p>{sports.covener}</p>
-                  <p>{sports.location}</p>
-                </div>
-              </div>
-              <div>
-                <img
-                  className="ml-4 mr-9"
-                  src={require("../img/" + sports.img + ".png")}
-                  alt={sports.title}
-                />
-              </div>
+
+              
             </div>
           );
         })}
-      </div> */}
+      </div>
+
+      <div className="m-5 font-manrope">
+        <div className=" mt-12 text-[24px] h-[32px] font-manrope">
+          <h1 className=" font-extrabold">Sport Events</h1>
+        </div>
+        <div className=" mt-14 w-full font-manrope">
+          {sports.map((sport) => {
+            return (
+              <div
+                key={sport.id}
+                className=" flex gap-4 px-4 w-[full] justify-between mb-8 items-center"
+              >
+                <div className=" flex flex-col gap-4 w-2/3">
+                  <div className=" flex justify-start items-center gap-10">
+                    {" "}
+                    <p>{sport.date}</p>
+                    <p className=" bg-[#FF0909] bg-opacity-[13%] w-[59px] h-[24px] rounded-lg text-[#FF0909] font-bold text-[12px] flex justify-center items-center">
+                      {sport.cost}
+                    </p>
+                  </div>
+                  <div className=" mb-1">
+                    <p className=" font-extrabold text-[25px] text-lg">
+                      {sport.title}
+                    </p>
+                    <div className=" flex justify-start items-center gap-4 w-full mt-4">
+                      <div className=" w-[24px] h-[24px] rounded-full">
+                        <img
+                          className=" w-full h-full object-cover"
+                          src={sport.authorImage}
+                          alt=""
+                        />
+                      </div>
+                      <p className=" ">{sport.covener}</p>
+                    </div>
+                    <div className=" flex justify-start items-center gap-4 w-full mt-4">
+                      <div className=" w-[24px] h-[24px] rounded-full">
+                        <img
+                          className=" w-full h-full object-cover"
+                          src={sport.location1}
+                          alt=""
+                        />
+                      </div>
+                      <p className="">{sport.location}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className=" w-[122px] h-[140px] rounded-xl">
+                  <img
+                    className=" w-full h-full object-cover"
+                    src={require("../img/" + sport.img + ".png")}
+                    alt={sport.title}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
