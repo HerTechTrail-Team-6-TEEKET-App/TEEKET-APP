@@ -2,6 +2,10 @@ import React from "react";
 import placeholder from "../assets/images/hero section.png"; 
 import users from "../assets/images/user.png";
 import ticket from "../assets/images/ticket.png";
+import Analytics from "../assets/images/Analytics.png";
+import marketing from '../assets/images/marketing.png';
+import phone from '../assets/images/phone.png';
+import review from '../assets/images/Review.png';
 
 function Home() {
   return (
@@ -32,7 +36,7 @@ function Home() {
                   01
                 </span>
                 <h1 className=" text-[#2068F7] font-extrabold">
-                  ANALYTICS AND FEEDBACK
+                  Do more with the Teeket App
                 </h1>
               </div>
               <div className="  w-[380px] text-[14px] pl-3 font-semibold ">
@@ -53,10 +57,10 @@ function Home() {
               </div>
               <div className="  w-[380px] text-[14px] pl-3 font-semibold ">
                 <h1 className="">
-                  Create events and sell tickets with our seamless and secure
-                  checkout feature for attendees in your event.
+                  Use real-time analytics and reports to learn more about your
+                  buyers and what your attendes are saying about your event.
                 </h1>
-                <img className=" my-6" src={ticket} alt="ticket" />
+                <img className=" my-6" src={Analytics} alt="ticket" />
               </div>
               <hr className=" border-t-10 mb-6" />
               <div className=" flex px-3">
@@ -64,18 +68,43 @@ function Home() {
                   03
                 </span>
                 <h1 className=" text-[#2068F7] font-extrabold">
-                  ANALYTICS AND FEEDBACK
+                  MARKETING AND PROMOTION
                 </h1>
               </div>
               <div className="  w-[380px] text-[14px] pl-3 font-semibold ">
                 <h1 className="">
-                  Create events and sell tickets with our seamless and secure
-                  checkout feature for attendees in your event.
+                  Boost event visibility and ticket sales when you market and
+                  promote your event with our tools and partners.
                 </h1>
-                <img className=" my-6" src={ticket} alt="ticket" />
+                <img className=" my-6" src={marketing} alt="ticket" />
               </div>
               <hr className=" border-t-10 mb-6" />
             </div>
+          </div>
+          <div className="  w-[380px] text-[14px] pl-3 font-semibold ">
+            <h1 className="  font-extrabold text-center text-[22px] mt-7">
+              Do more with the Teeket App
+            </h1>
+            <h1 className=" mx-2 text-center text-[16px] p-4">
+              Organize events like a Pro with our easy to use{" "}
+              <span className="text-[#2068F7]  pr-2 font-extralight text-opacity-[70%]">
+                Teeket app
+              </span>{" "}
+              featuring tools like check in, curating guestlists, marketing
+              tools and much more
+            </h1>
+            <img alt="phone" className=" my-3 h-[314px]" src={phone} />
+            <h1 className=" text-[#2068F7] font-extrabold text-[18px] my-2 text-center">
+              That's not all!
+            </h1>
+            <h1 className=" mx-2 text-center text-[16px] p-2">
+              Get 30 days free access to promotion by our partners to attract
+              more attendees and boost ticket sales for your events.
+            </h1>
+            <h1 className="  font-extrabold text-[22px] mt-7">
+              Don't take our word for it
+            </h1>
+            <img alt="" className=" " src = { review }/>
           </div>
         </div>
       </div>
