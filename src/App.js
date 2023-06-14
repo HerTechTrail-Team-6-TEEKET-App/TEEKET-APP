@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import LandingPage from "../src/pages/landingPage";
 import EventLists from "../src/pages/eventLists";
 import Login from "../src/pages/loginPage";
+import Attendees from '../src/pages/attendeesPage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/eventLists" element={<EventLists/>} />
           <Route path="/login" element={<Login/>} />
+          <Route path="/attendees" element={<Attendees />} />
         </Routes>
       </BrowserRouter>
       <ToastContainer />

@@ -22,10 +22,12 @@ function LandingPage() {
             your convenience.
           </p>
           <div className=" w-full flex justify-center items-center mt-12">
-            <button className="bg-[#0052F6]	text-white rounded-xl h-[60px] w-[85%] font-medium">
-              {" "}
-              Create an event
-            </button>
+            <Link
+              className="bg-[#0052F6]	text-white rounded-xl h-[60px] w-[85%] font-medium"
+              to={"/login"}
+            >
+              <button> Create an event</button>
+            </Link>
           </div>
           <div className=" w-full flex justify-center items-center mt-8">
             <button className="bg-white text-[#101010] rounded-xl h-[60px] w-[85%] font-medium">
