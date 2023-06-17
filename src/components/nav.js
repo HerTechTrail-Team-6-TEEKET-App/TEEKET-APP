@@ -4,18 +4,17 @@ import logo from "../img/logo.png";
 
 function nav() {
   return (
-    <div>
-      <div className=" font-manrope flex justify-between mt-6 border-b border-gray-300">
-        <div className=" pt-[27px] p-4">
-          <img src={logo} alt="logo" />
-        </div>
-        <div className=" pl-[40px] pt-[24px] mx-12 h-[31px] w-[94px]">
-          <button className=" bg-[#001133] py-[12px] px-[20px] text-white font-bold text-[14px] text-center rounded-[12px] w-[79px]">
-            Menu
-          </button>
+    <div className=" container mx-auto max-w-screen-sm my-9 flex flex-row justify-center">
+      <div className=" w-[90%] min-[400px]:w-[60%] lg:w-[30%] border-gray-300">
+        <div className=" flex-1 mx-0 ">
+          <img src={logo} alt="logo" className=" w-30 h-12" />
         </div>
       </div>
-
+      <div className=" float-none">
+        <button className=" ml-13 bg-[#001133] py-[13px] text-white font-bold text-[14px] text-center rounded-[12px] w-[79px]">
+          Menu
+        </button>
+      </div>
     </div>
   );
 }
